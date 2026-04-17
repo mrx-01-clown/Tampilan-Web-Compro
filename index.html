@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/shishirraven/animate-on-scroll@v1.2/animation_utility.css">
@@ -66,20 +67,28 @@
     <!-- Main -->
     <main>
 
-        <div class="section bg-attach-cover"
-            style="background-image: url(image/logo\ entwo\ group.png); background-position: bottom; height: 125vh; position: absolute; inset: 0; z-index: 0; padding-top: 0.5rem;">
+        <div id="heroBackgroundCarousel" class="carousel slide carousel-fade hero-carousel-container" data-bs-ride="carousel" data-bs-pause="false" data-bs-interval="5000">
+            <div class="carousel-inner h-100">
+                <div class="carousel-item active h-100">
+                    <div class="w-100 h-100 bg-attach-cover hero-carousel-item-bg hero-bg-1"></div>
+                </div>
+                <div class="carousel-item h-100">
+                    <div class="w-100 h-100 bg-attach-cover hero-carousel-item-bg hero-bg-2"></div>
+                </div>
+                <div class="carousel-item h-100">
+                    <div class="w-100 h-100 bg-attach-cover hero-carousel-item-bg hero-bg-3"></div>
+                </div>
+            </div>
+            <!-- Vintage dark overlay to ensure text readability -->
+            <div class="hero-overlay-vintage"></div>
         </div>
         <!-- Banner -->
-        <div class="r-container d-flex flex-column gap-3 align-items-center justify-content-center"
-            style="padding-bottom: 6em;">
-            <span class="sub-heading scrollanimation animated fadeInUp adr-5">Welome to
-                Entwo Electronik & Engineer</span>
-            <h1 class="text-center scrollanimation animated fadeInUp adr-5 adl-2">The Inovation <br>
-                Scalable<span class="accent-color-5"> Software Development</span></h1>
-            <p class="text-center scrollanimation animated fadeInUp adr-5 adl-4" style="max-width: 500px;">Codexa
-                helps you
-                build, automate, and scale
-                your business with next-gen cloud solutions—fast, secure, and future-ready.</p>
+        <div class="r-container d-flex flex-column gap-3 align-items-center justify-content-center position-relative hero-banner-content">
+            <span class="sub-heading scrollanimation animated fadeInUp adr-5 hero-welcome-text">Welcome to
+                ENTWO</span>
+            <h1 class="text-center scrollanimation animated fadeInUp adr-5 adl-2 hero-main-title">Connected through Innovation,<br>
+                <span class="hero-accent-text"> Creating a Better Future</span></h1>
+            <p class="text-center scrollanimation animated fadeInUp adr-5 adl-4 hero-desc-text">We are your reliable partner for General Contractor, Supply, System Integrator, and Engineering & Maintenance since 2013.</p>
             <div class="d-flex flex-xl-row flex-column gap-4">
                 <div class="w-max-content scrollanimation animated fadeInUp adr-5 adl-5">
                     <a href="contact.html" class="btn btn-accent">
@@ -92,148 +101,7 @@
                     </a>
                 </div>
             </div>
-            <div class="row row-cols-xl-3 row-cols-1 w-100 mt-5">
-                <div class="col col-xl-3 mb-3">
-                    <div class="accordion hero d-flex flex-column gap-4 w-100" id="faqAccordion1">
-                        <div class="accordion-item scrollanimation animated fadeInUp">
-                            <h5 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#point1" aria-expanded="true" aria-controls="point1">
-                                    <span>01</span>
-                                    <span class="title">Real-Time Analytics</span>
-                                </button>
-                            </h5>
-                            <div id="point1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion1">
-                                <div class="accordion-body">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item scrollanimation animated fadeInUp adl-1">
-                            <h5 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#point2" aria-expanded="false" aria-controls="point2">
-                                    <span>02</span>
-                                    <span class="title">Automated Workflows</span>
-                                </button>
-                            </h5>
-                            <div id="point2" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion1">
-                                <div class="accordion-body">
-                                    Streamline repetitive workflows and save time.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item scrollanimation animated fadeInUp adl-2">
-                            <h5 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#point3" aria-expanded="false" aria-controls="point3">
-                                    <span>03</span>
-                                    <span class="title">Seamless Integrations</span>
-                                </button>
-                            </h5>
-                            <div id="point3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion1">
-                                <div class="accordion-body">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-xl-5 mb-3">
-                    <div class="position-relative">
-                        <div class="d-flex flex-column position-relative bg-accent-color-2 justify-content-between rounded-3"
-                            style="min-height: 500px;">
-                            <div class="position-absolute top-0 start-0 end-0" style="z-index: 0;">
-                                <div class="d-flex position-relative rounded-3 w-100 overflow-hidden"
-                                    style="min-height: 500px;">
-                                    <div class="bg-blob"></div>
-                                    <div class="blob"></div>
-                                </div>
-                            </div>
-                            <div class="position-absolute z-1 start-0 top-0 bottom-0 end-0 overflow-hidden">
-                                <img src="image/02_tablet-mockup.png" class="img-fluid"
-                                    style="transform: scale(1.4) translateY(5rem) translateX(2rem);" alt="">
-                            </div>
-                            <span
-                                class="tags position-relative align-self-xl-end scrollanimation animated fadeIn adr-5 adl-3 z-2"
-                                style="margin-top: 2rem; margin-right: 2rem;">New
-                                Feature: Live Metrics</span>
-                            <button class="btn-play" type="button" data-bs-toggle="modal" data-bs-target="#e119">
-                                <p class="btn-play__text">
-                                    <span style="--index: 0;">S</span>
-                                    <span style="--index: 1;">e</span>
-                                    <span style="--index: 2;">e</span>
-                                    <span style="--index: 3;"> </span>
-                                    <span style="--index: 4;">H</span>
-                                    <span style="--index: 5;">o</span>
-                                    <span style="--index: 6;">w</span>
-                                    <span style="--index: 7;"> </span>
-                                    <span style="--index: 8;">I</span>
-                                    <span style="--index: 9;">t</span>
-                                    <span style="--index: 10;"> </span>
-                                    <span style="--index: 11;">W</span>
-                                    <span style="--index: 12;">o</span>
-                                    <span style="--index: 13;">r</span>
-                                    <span style="--index: 14;">k</span>
-                                    <span style="--index: 15;">s</span>
-                                    <span style="--index: 16;"> </span>
-                                    <span style="--index: 17;">S</span>
-                                    <span style="--index: 18;">e</span>
-                                    <span style="--index: 19;">e</span>
-                                    <span style="--index: 20;"> </span>
-                                    <span style="--index: 21;">H</span>
-                                    <span style="--index: 22;">o</span>
-                                    <span style="--index: 23;">w</span>
-                                    <span style="--index: 24;"> </span>
-                                    <span style="--index: 25;">I</span>
-                                    <span style="--index: 26;">t</span>
-                                    <span style="--index: 27;"> </span>
-                                    <span style="--index: 28;">W</span>
-                                    <span style="--index: 29;">o</span>
-                                    <span style="--index: 30;">r</span>
-                                    <span style="--index: 31;">k</span>
-                                    <span style="--index: 32;">s</span>
-                                </p>
-                                <a href="about-us.html" class="btn-play__circle bg-accent-color accent-color-2">
-                                    <i class="rtmicon rtmicon-arrow-down-right btn-play__icon"></i>
-                                    <i class="rtmicon rtmicon-arrow-down-right btn-play__icon btn-play__icon--copy"></i>
-                                </a>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-xl-3 mb-3">
-                    <div class="d-flex flex-column align-items-start gap-3 ps-xl-4" style="margin-top: 5rem;">
-                        <div class="customer-container">
-                            <div class="customer-item">
-                                <img src="image/dummy-img-600x800.jpg" class="img-fluid" alt="" />
-                            </div>
-                            <div class="customer-item">
-                                <img src="image/dummy-img-600x800.jpg" class="img-fluid" alt="" />
-                            </div>
-                            <div class="customer-item">
-                                <span class="small-text">60+</span>
-                            </div>
-                        </div>
-                        <div class="d-flex flex-column scrollanimation animated zoomIn adr-5 adl-2">
-                            <p><span class="text-color">Trusted by startups</span> to enterprises across 40+
-                                industries.</p>
-                        </div>
-                        <div class="card-feature" style="z-index: 4;">
-                            <h6 class="accent-color-5 bg-accent-color-2 rounded-pill border border-accent-6 scrollanimation animated fadeIn adr-5 adl-2"
-                                style="padding: 8px 12px;">Weekly Feature</h6>
-                            <h5 class=" scrollanimation animated fadeIn adr-5 adl-3">Team Sync Automation</h5>
-                            <span class=" scrollanimation animated fadeIn adr-5 adl-4">Cut stand-up time in half
-                                with smart agenda mapping.</span>
-                            <div class="w-max-content scrollanimation animated fadeIn adr-5 adl-5">
-                                <a href="contact.html" class="btn btn-accent">
-                                    <span>Learn More</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </div>
         <!-- Section Feature  -->
         <div class="r-container d-flex flex-column gap-3 align-items-center justify-content-center"
@@ -447,16 +315,13 @@
                         <div class="d-flex flex-column gap-3 align-items-start">
                             <span class="sub-heading scrollanimation animated fadeInDown adr-5 adl-1">About
                                 Us</span>
-                            <h3 class="scrollanimation animated fadeInDown adr-5">Built For Developers, Backed By
-                                <span class="accent-color-5">Experience</span>
+                            <h3 class="scrollanimation animated fadeInDown adr-5">Established in 2013, Based in
+                                <span class="accent-color-5">Cilacap</span>
                             </h3>
                         </div>
                     </div>
                     <div class="col col-xl-4 mb-3">
-                        <p class="scrollanimation animated fadeInUp adr-5 adl-2" style="max-width: 500px;">We care
-                            deeply about building not just efficient tools, but meaningful partnerships. Our
-                            support, our roadmap, and our values are all shaped around helping you build what
-                            matters, faster and better.</p>
+                        <p class="scrollanimation animated fadeInUp adr-5 adl-2" style="max-width: 500px;">Since 2013, ENTWO has been committed to providing top-tier solutions in Cilacap and beyond. We build meaningful partnerships and deliver high-quality projects, ensuring that we create a better future through continuous innovation.</p>
                     </div>
                 </div>
                 <div class="position-relative">
@@ -557,10 +422,8 @@
                     <div class="col col-xl-7 mb-3">
                         <div class="card card-service p-2 rounded-3 bg-accent-color-2 d-flex flex-column">
                             <div class="d-flex flex-column gap-3 p-4">
-                                <h5 class="scrollanimation animated fadeInDown adr-5">Real-Time AI Assistance</h5>
-                                <p class="scrollanimation animated fadeInDown adr-5 adl-1">Get intelligent suggestions
-                                    that help you write cleaner, faster code. Codexa’s AI understands your context and
-                                    adapts to your workflow.</p>
+                                <h5 class="scrollanimation animated fadeInDown adr-5">General Contractor</h5>
+                                <p class="scrollanimation animated fadeInDown adr-5 adl-1">Providing comprehensive construction and project management solutions with the highest standards of safety, quality, and efficiency for every project scale.</p>
                                 <div class="w-max-content scrollanimation animated fadeIn adr-5 adl-3">
                                     <a href="service.html" class="btn btn-accent">
                                         <span>Learn More</span>
@@ -574,10 +437,8 @@
                         <div class="card card-service p-2 rounded-3 bg-accent-color-2 d-flex flex-column">
                             <img src="image/card_service_02.png" class="img-fluid rounded-3 h-100" alt="">
                             <div class="d-flex flex-column gap-3 p-4">
-                                <h5 class="scrollanimation animated fadeInUp adr-5">Integrated DevOps Tools</h5>
-                                <p class="scrollanimation animated fadeInUp adr-5 adl-1">Manage builds, deployments, and
-                                    monitoring from a single platform. Keep your release
-                                    cycle running smoothly.</p>
+                                <h5 class="scrollanimation animated fadeInUp adr-5">Supply</h5>
+                                <p class="scrollanimation animated fadeInUp adr-5 adl-1">Delivering high-quality materials and equipment reliably and on time to support your operational and project needs seamlessly.</p>
                                 <div class="w-max-content scrollanimation animated fadeIn adr-5 adl-3">
                                     <a href="service.html" class="btn btn-accent line">
                                         <span>Learn More</span>
@@ -590,9 +451,8 @@
                         <div class="card card-service p-2 rounded-3 bg-accent-color-2 d-flex flex-column">
                             <img src="image/card_service_3.png" class="img-fluid rounded-3 h-100" alt="">
                             <div class="d-flex flex-column gap-3 p-4">
-                                <h5 class="scrollanimation animated fadeInUp adr-5">Enterprise-Grade Security</h5>
-                                <p class="scrollanimation animated fadeInUp adr-5 adl-1">Protect your data with advanced
-                                    encryption and access controls.</p>
+                                <h5 class="scrollanimation animated fadeInUp adr-5">System Integrator</h5>
+                                <p class="scrollanimation animated fadeInUp adr-5 adl-1">Designing and implementing interconnected systems to optimize your workflow, enhance communication, and drive technological innovation.</p>
                                 <div class="w-max-content scrollanimation animated fadeIn adr-5 adl-3">
                                     <a href="service.html" class="btn btn-accent line">
                                         <span>Learn More</span>
@@ -604,10 +464,8 @@
                     <div class="col col-xl-7 mb-3">
                         <div class="card card-service p-2 rounded-3 bg-accent-color-2 d-flex flex-column">
                             <div class="d-flex flex-column gap-3 p-4">
-                                <h5 class="scrollanimation animated fadeInDown adr-5">Flexible API Integration</h5>
-                                <p class="scrollanimation animated fadeInDown adr-5 adl-1">Easily connect Codexa to your
-                                    existing tools and services. Our APIs are built for
-                                    speed, security, and scalability.</p>
+                                <h5 class="scrollanimation animated fadeInDown adr-5">Engineering & Maintenance</h5>
+                                <p class="scrollanimation animated fadeInDown adr-5 adl-1">Ensuring the longevity and optimal performance of your assets through expert engineering services and proactive maintenance programs.</p>
                                 <div class="w-max-content scrollanimation animated fadeIn adr-5 adl-3">
                                     <a href="service.html" class="btn btn-accent">
                                         <span>Learn More</span>
@@ -628,11 +486,11 @@
                     <div class="col col-xl-5 mb-3">
                         <div class="d-flex flex-column gap-3 align-items-start">
                             <span class="sub-heading scrollanimation animated fadeInUp adr-5">Why Choose Us</span>
-                            <h3 class="scrollanimation animated fadeInUp adr-5 adl-2">The Right Partner <br>
-                                for<span class="accent-color-5"> Your Growth</span>
+                            <h3 class="scrollanimation animated fadeInUp adr-5 adl-2">Proven Excellence & <br>
+                                <span class="accent-color-5"> Real Facts</span>
                             </h3>
                             <p class="scrollanimation animated fadeInUp adr-5 adl-4" style="max-width: 400px;">
-                                Proven reliability, unmatched support, and the performance you need to move faster.</p>
+                                Backed by a strong portfolio of satisfied clients and innovative products, we deliver tangible results you can trust.</p>
                             <div class="card card-about mt-3">
                                 <div class="icon-box">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="29" viewBox="0 0 28 29"

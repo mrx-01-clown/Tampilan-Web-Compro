@@ -3506,3 +3506,67 @@ a {
     }
 
 }
+
+/* --- Custom Hero Section Styles --- */
+.hero-carousel-container {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    height: 125vh;
+    overflow: hidden;
+}
+
+.hero-carousel-item-bg {
+    padding-top: 0.5rem;
+    filter: sepia(30%) contrast(105%) brightness(85%);
+}
+
+.hero-bg-1 {
+    background-image: url('../image/logo entwo group.png');
+    background-position: bottom;
+}
+
+.hero-bg-2 {
+    background-image: url('../image/DokumentasiEntwo.png');
+    background-position: center;
+}
+
+.hero-bg-3 {
+    background-image: url('../image/DokumentasiEntwo1.png');
+    background-position: center;
+}
+
+.hero-overlay-vintage {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(35, 25, 15, 0.55);
+    z-index: 1;
+}
+
+.hero-banner-content {
+    padding-bottom: 6em;
+    z-index: 2;
+}
+
+.hero-welcome-text {
+    color: #FFFFFF !important;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+}
+
+.hero-main-title {
+    color: #Fdfbf7 !important;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+}
+
+.hero-accent-text {
+    color: #D4AF37 !important;
+}
+
+.hero-desc-text {
+    max-width: 500px;
+    color: #Eaeaea !important;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+    font-weight: 500;
+}
