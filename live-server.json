@@ -1,0 +1,7 @@
+{
+    "host": " 172.22.18.134",
+    "port": 8800,
+    "open": false,
+    "file": "index.html",
+    "wait": 1000
+}

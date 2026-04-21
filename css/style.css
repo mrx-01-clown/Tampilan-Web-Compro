@@ -94,18 +94,21 @@
 /*  Custom Properties            */
 /* ---------------------------- */
 :root {
-    --primary: #03134b;
-    --text-color: #9cbb8d;
-    --text-color-2: #65895d;
+    --primary: #fdfdfd74;
+    --text-color: #1a1b19;
+    --text-color-2: #F0FFC2;
     --accent-color: #e73b40;
-    --accent-color-2: #e5f9e5;
-    --accent-color-3: #c8d6ea;
+    --accent-color-2: #e8fc8df9;
+    --accent-color-3: #cadbf3;
     --accent-color-4: #D3D3D3;
     --accent-color-5: #f6f7f8;
     --accent-color-6: #E8F1FF;
     --accent-color-7: linear-gradient(90deg, #98C1FF 2.3%, #267DFF 100%);
     --font-1: "Geist", sans-serif;
     --font-2: "Manrope", sans-serif;
+    --nocola: #38bdf8;
+    --cyan: #67e8f9;
+    --emerald: #10b981;
 }
 
 
@@ -115,7 +118,7 @@
 body {
     font-family: var(--font-1);
     color: var(--text-color);
-    background-color: var(--primary);
+    background-color: #1A1A1A;
 }
 
 
@@ -130,11 +133,13 @@ h1 {
 h2 {
     font-size: 56px;
     font-weight: 600;
+    color: whitesmoke;
 }
 
 h3 {
     font-size: 48px;
     font-weight: 600;
+    color: white;
 }
 
 h4 {
@@ -145,6 +150,7 @@ h4 {
 h5 {
     font-size: 24px;
     font-weight: 500;
+    color: var(--accent-color-5);
 }
 
 h6 {
@@ -166,6 +172,7 @@ p {
 
 ul {
     list-style: none;
+    opacity: 100% !important;
     margin-top: 1px;
 }
 
@@ -232,7 +239,7 @@ img {
 
 h3 span {
     position: relative;
-    color: var(--text-color);
+    color: var(--accent-color-2);
     transition: all 0.75s;
     transition-delay: 0.6s;
 }
@@ -415,6 +422,7 @@ h3 span.active_.text {
 .logoEntwo {
     transition: all 0.3s ease;
     max-height: 80px;
+    opacity: 100% !important;
     /* atau sesuai keinginan, misal 80px */
     width: auto;
 }
@@ -422,12 +430,13 @@ h3 span.active_.text {
 /* Ukuran logo saat navbar discroll */
 header.navbar-scrolled .logoEntwo {
     max-height: 50px;
+    opacity: 100% !important;
     /* mengecil */
 }
 
 
 header.navbar-scrolled .navbar {
-    max-height: 75px;
+    max-height: 85px;
     /* mengecil */
 }
 
@@ -449,10 +458,6 @@ header.sticky-top.bg-accent-primary {
     /* HAPUS display: flex; dan height dari sini */
 }
 
-header.sticky-top.navbar-scrolled {
-    background-color: #03134b !important;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
 
 /* 2. Navbar: Kendali tinggi dipindah ke sini agar Bootstrap otomatis menyeimbangkan vertikalnya */
 .navbar {
@@ -464,10 +469,28 @@ header.sticky-top.navbar-scrolled {
     /* Animasi mengecil yang mulus */
 }
 
-/* Navbar mengecil saat di-scroll */
+/*=========================================2. KONDISI SETELAH DI-SCROLL=========================================*/
+header.navbar-scrolled {
+    padding-top: 20px;
+    /* Jarak melayang dari atas layar */
+}
+
 header.navbar-scrolled .navbar {
-    height: 100px;
-    /* Tinggi saat di-scroll */
+    /* Navbar mengecil menjadi bentuk 'Pil' di tengah */
+    width: 99%;
+    /* Atau gunakan max-width: 800px; */
+    margin: 0 auto;
+    border-radius: 50px;
+    /* Sudut membulat */
+
+    /* Efek Kaca (Glassmorphism) */
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    /* Bayangan lembut agar terlihat melayang */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 /* 3. Transisi Logo */
@@ -475,6 +498,19 @@ header.navbar-scrolled .navbar {
     transition: all 0.3s ease;
     max-height: 60px;
     width: auto;
+}
+
+.navbar-brand-name {
+    font-weight: 900;
+    color: white;
+}
+
+header.navbar-scrolled .navbar-brand-name {
+    font-weight: 900;
+    background: linear-gradient(to right, #d73c32, #4aad56, #2777ac);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 header.navbar-scrolled .logoEntwo {
@@ -485,9 +521,17 @@ header.navbar-scrolled .logoEntwo {
 .nav-link {
     color: white !important;
     padding: 8px 12px !important;
-    background: transparent !important;
+    background: transparent;
     transition: all 0.3s ease;
     border-bottom: 2px solid transparent;
+}
+
+header.navbar-scrolled .nav-link {
+    font-weight: 950;
+    background: linear-gradient(to right, #d73c32, #4aad56, #2777ac);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 /* Hover dan active: border merah */
@@ -495,7 +539,20 @@ header.navbar-scrolled .logoEntwo {
 .nav-link.active {
     border-bottom: 2px solid red !important;
     color: white !important;
-    background: transparent !important;
+    background: transparent;
+}
+
+/* Mengatur warna saat menu di-hover / aktif saat posisi sedang di-scroll */
+header.navbar-scrolled .nav-item:hover .nav-link,
+header.navbar-scrolled .nav-link.active {
+    font-weight: bold;
+    background: linear-gradient(to right, #d73c32, #4aad56, #2777ac);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* Balik menjadi putih saat di hover agar terlihat jelas */
+    border-bottom: 2px solid #3c5f83 !important;
+    /* Garis bawah biru */
 }
 
 /* Dropdown menu item */
@@ -635,37 +692,6 @@ header.navbar-scrolled .logoEntwo {
     background-color: var(--accent-color);
 }
 
-.dropdown-menu {
-    border-radius: 0;
-    border: none;
-    padding: 0;
-    -webkit-box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.3);
-}
-
-.dropdown-item {
-    padding-block: 0.75rem;
-    color: var(--text-color);
-    font-family: var(--font-1);
-    font-size: 16px;
-    padding-inline: 2rem;
-    background-color: var(--background-color);
-}
-
-.dropdown-item.active {
-    color: var(--primary);
-    background-color: var(--accent-color);
-}
-
-.dropdown-item:hover {
-    background-color: var(--accent-color);
-    color: var(--primary);
-}
-
-.dropdown-item:focus {
-    color: var(--accent-color);
-}
 
 /* ---------------------------- */
 /* Section and Container       */
@@ -707,7 +733,7 @@ header.navbar-scrolled .logoEntwo {
 }
 
 .bg-accent-color-2 {
-    background-color: var(--accent-color-2);
+    background-color: rgba(150, 198, 248, 0.6)
 }
 
 .bg-accent-color-3 {
@@ -744,7 +770,7 @@ header.navbar-scrolled .logoEntwo {
 
 .bg-accent-color-hover:hover {
     background-color: var(--accent-color);
-    color: white;
+    color: rgb(233, 219, 228);
 }
 
 .bg-dark-transparent {
@@ -778,7 +804,7 @@ header.navbar-scrolled .logoEntwo {
 }
 
 .accent-color-5 {
-    color: var(--accent-color-5);
+    color: var(--accent-color-3);
 }
 
 .accent-color-6 {
@@ -839,7 +865,7 @@ header.navbar-scrolled .logoEntwo {
 }
 
 .text-gray {
-    color: rgb(247, 243, 243) !important;
+    color: rgba(23, 17, 17, 0.815) !important;
 }
 
 /* ---------------------------- */
@@ -1151,8 +1177,9 @@ a {
 }
 
 .btn-accent {
+    font-weight: bold;
     background: var(--accent-color);
-    color: var(--primary);
+    color: var(--accent-color-4);
     transition: all 0.5s;
     overflow: hidden;
     border-radius: 50px;
@@ -1171,7 +1198,7 @@ a {
 
 .btn-accent.line {
     background: transparent;
-    color: var(--text-color);
+    color: rgb(249, 246, 196);
     border: 1px solid var(--text-color);
 }
 
@@ -1306,7 +1333,7 @@ a {
 .btn-accent-underline {
     background-color: transparent;
     border-bottom: 1px solid var(--text-color);
-    color: var(--text-color);
+    color: #f8f9fa;
     white-space: nowrap;
     cursor: pointer;
     position: relative;
@@ -1557,7 +1584,7 @@ a {
 }
 
 .bg-overlay-footer {
-    background: linear-gradient(to top, #8EBBFF 0%, rgba(142, 187, 255, 0.6) 10%, rgba(142, 187, 255, 0.2) 50%, transparent 100%);
+    background: linear-gradient(to top, #1c2f4d 0%, rgb(20 26 35) 10%, rgb(21 43 77 / 92%) 50%, #17274bb3 100%);
     position: absolute;
     width: 100%;
     height: 100%;
@@ -2452,7 +2479,7 @@ a {
 }
 
 .card-service {
-    background-color: var(--accent-color-2);
+    background-color: rgba(245, 239, 239, 0.356);
 }
 
 .card-feature {
@@ -2627,7 +2654,7 @@ a {
 }
 
 .card-image-single {
-    background-color: hsla(0, 0%, 100%, 0);
+    background-color: hsla(0, 0%, 96%, 0.148);
     background-image:
         radial-gradient(at 86% 98%, hsla(215, 100%, 57%, 1) 0px, transparent 50%),
         radial-gradient(at 12% 100%, hsla(215, 100%, 57%, 1) 0px, transparent 50%);
@@ -2805,7 +2832,7 @@ a {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.06);
+    box-shadow: 0px 8px 12px rgba(248, 245, 245, 0.06);
     border-radius: 16px;
 }
 
@@ -3512,7 +3539,7 @@ a {
     position: absolute;
     inset: 0;
     z-index: 0;
-    height: 125vh;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -3521,6 +3548,7 @@ a {
     filter: sepia(30%) contrast(105%) brightness(85%);
 }
 
+/* Foto Buat Background Hero Home */
 .hero-bg-1 {
     background-image: url('../image/logo entwo group.png');
     background-position: bottom;
@@ -3536,10 +3564,35 @@ a {
     background-position: center;
 }
 
+/* Foto Buat Background Hero About */
+.hero-bg-about-1 {
+    background-image: url('../image/travelEntwo.webp');
+    background-position: bottom;
+}
+
+.hero-bg-about-2 {
+    background-image: url('../image/9.jpg');
+    background-position: center;
+}
+
+.hero-bg-about-3 {
+    background-image: url('../image/DokumentasiEntwo1.png');
+    background-position: center;
+}
+
+/* Overlay khusus untuk halaman Home (Gelap di Kiri) */
+.hero-overlay-vintage-home {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 45%, transparent 100%);
+    z-index: 1;
+}
+
 .hero-overlay-vintage {
     position: absolute;
     inset: 0;
-    background-color: rgba(35, 25, 15, 0.55);
+    /* Ubah angka 0.156 menjadi 0.7 untuk efek gelap seperti Nocola */
+    background-color: rgba(0, 0, 0, 0.7);
     z-index: 1;
 }
 
@@ -3552,12 +3605,12 @@ a {
     color: #FFFFFF !important;
     font-weight: 600;
     letter-spacing: 1px;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
 }
 
 .hero-main-title {
     color: #Fdfbf7 !important;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 .hero-accent-text {
@@ -3567,6 +3620,6 @@ a {
 .hero-desc-text {
     max-width: 500px;
     color: #Eaeaea !important;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
     font-weight: 500;
 }
